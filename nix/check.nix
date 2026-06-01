@@ -10,7 +10,7 @@
 
           buildPhase = ''
             export HOME=$TMPDIR
-            buf lint --config ${self}/buf.yml
+            buf lint
             
             touch $out
           '';

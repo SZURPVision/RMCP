@@ -1,12 +1,9 @@
 { ... }:
 {
-  perSystem = { pkgs, ... }:
+  perSystem = { pkgs, config, ... }:
     {
       devShells.default = pkgs.mkShell {
-        buildInputs = with pkgs; [
-          protobuf
-          buf
-        ];
+        inputsFrom = [ config.packages.default ];
       };
     };
 }

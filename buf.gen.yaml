@@ -1,0 +1,6 @@
+version: v1
+plugins:
+  - plugin: cpp
+    out: gen/cpp
+  - plugin: csharp
+    out: gen/csharp
