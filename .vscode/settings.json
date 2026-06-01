@@ -1,5 +1,14 @@
 {
 	"nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix",
 	"nixEnvSelector.useFlakes": true,
-	"nixEnvSelector.flakeShell": "default"
+	"nixEnvSelector.flakeShell": "default",
+	"protobuf.externalLinter.enabled": true,
+	"protobuf.externalLinter.linter": "buf",
+	"protobuf.externalLinter.bufPath": "buf",
+
+	"[proto3]": {
+		"editor.tabSize": 2,
+		"editor.insertSpaces": true,
+		"editor.detectIndentation": false
+	}
 }
