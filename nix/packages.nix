@@ -27,8 +27,9 @@
         phases = [ "installPhase" ];
         installPhase = ''
           mkdir -p $out/include/rmcp
+          mkdir -p $out/src/rmcp
           ln -s ${all-gen}/cpp/*.h $out/include/rmcp/
-          ln -s ${all-gen}/cpp/*.cc $out/include/rmcp/
+          ln -s ${all-gen}/cpp/*.cc $out/src/rmcp/
         '';
 
         meta = {
