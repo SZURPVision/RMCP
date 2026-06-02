@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# ** This file is only used in nix **
+import os
+from SCons.Script import SConscript, Glob, Default
+from SCons.Environment import Environment as SConsEnvironment
+
+env = SConsEnvironment(
+	CPPPATH =['#include'],
+	CXXFLAGS=['-std=c++17'],
+	ENV = {
+		'PATH': os.environ.get('PATH', ''),
+		'PKG_CONFIG_PATH': os.environ.get('PKG_CONFIG_PATH', '')
+	}
+)
+
+env.ParseConfig("pkg-config --cflags --libs protobuf")
+
+sources = Glob("src/**/*.cc")
+
+target_library = env.SharedLibrary(target="lib/rmcp", source=sources)
+
+Default(target_library)
