@@ -6,5 +6,5 @@ includedir=${prefix}/include
 Name: @pname@
 Description: @description@
 Version: @version@
-Libs: -L${libdir} -lrmcp-cpp
+Libs: -L${libdir} -lrmcp
 Cflags: -I${includedir}
