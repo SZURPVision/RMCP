@@ -15,7 +15,7 @@ env = SConsEnvironment(
 
 env.ParseConfig("pkg-config --cflags --libs protobuf")
 
-sources = Glob("src/**/*.cc")
+sources = Glob("src/*.cc")
 
 target_library = env.SharedLibrary(target="lib/rmcp", source=sources)
 
